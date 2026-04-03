@@ -6,7 +6,8 @@
  * Each card: Problem → Tech → Result format
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const projects = [
   {
@@ -68,29 +69,15 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.08 }
-    );
-    const els = sectionRef.current?.querySelectorAll(".fade-up");
-    els?.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="projects" ref={sectionRef} className="py-32 relative overflow-hidden">
+    <section id="projects" className="py-32 relative overflow-hidden bg-white">
       {/* Background number */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
         className="absolute top-8 left-0 select-none pointer-events-none"
         style={{
           fontSize: "clamp(6rem, 18vw, 16rem)",
@@ -104,128 +91,168 @@ export default function ProjectsSection() {
         aria-hidden="true"
       >
         04
-      </div>
+      </motion.div>
 
       <div className="container relative z-10">
         {/* Section header */}
-        <div className="flex items-center gap-4 mb-6 fade-up">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-4 mb-6"
+        >
           <span className="accent-line" />
           <span className="text-xs font-mono font-medium tracking-[0.25em] uppercase text-[oklch(0.52_0.22_25)]">
             Projects
           </span>
           <div className="flex-1 h-px bg-[oklch(0.88_0.003_285)]" />
-        </div>
+        </motion.div>
 
-        <div className="mb-16 fade-up" style={{ transitionDelay: "0.05s" }}>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="mb-16"
+        >
           <h2
             className="text-4xl md:text-5xl font-bold text-[oklch(0.12_0.005_285)] leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Selected Work
           </h2>
-        </div>
+        </motion.div>
 
         {/* Projects list */}
-        <div className="space-y-0 border-t border-[oklch(0.88_0.003_285)]">
+        <div className="border-t border-[oklch(0.88_0.003_285)]">
           {projects.map((project, i) => (
-            <div
+            <motion.div
               key={project.num}
-              className={`fade-up border-b border-[oklch(0.88_0.003_285)] transition-all duration-300 cursor-pointer ${
-                hoveredIdx === i ? "bg-[oklch(0.98_0.001_285)]" : "bg-white"
-              }`}
-              style={{ transitionDelay: `${i * 0.07}s` }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10% 0px" }}
+              transition={{ delay: i * 0.1 }}
               onMouseEnter={() => setHoveredIdx(i)}
               onMouseLeave={() => setHoveredIdx(null)}
+              className="border-b border-[oklch(0.88_0.003_285)] group cursor-pointer relative overflow-hidden"
+              style={{
+                backgroundColor: hoveredIdx === i ? "oklch(0.98 0.001 285)" : "transparent",
+                transition: "background-color 0.4s ease",
+              }}
             >
-              {/* Header row */}
-              <div className="grid grid-cols-[auto_1fr_auto] gap-6 items-center p-6 md:p-8">
-                <span
-                  className="text-2xl font-bold"
+              {/* Main Content Area */}
+              <div className="relative z-10 grid grid-cols-[auto_1fr_auto] gap-6 items-center p-6 md:p-8">
+                {/* Number */}
+                <motion.span
+                  animate={{ 
+                    color: hoveredIdx === i ? "var(--primary)" : "oklch(0.88 0.003 285)",
+                    scale: hoveredIdx === i ? 1.05 : 1
+                  }}
+                  className="text-2xl font-bold transition-colors duration-300"
                   style={{
                     fontFamily: "'Playfair Display', serif",
-                    color: hoveredIdx === i ? `${project.color}` : "oklch(0.88 0.003 285)",
-                    transition: "color 0.3s ease",
+                    color: hoveredIdx === i ? project.color : "oklch(0.88 0.003 285)",
                   }}
                 >
                   {project.num}
-                </span>
+                </motion.span>
+
+                {/* Title and Highlight */}
                 <div>
                   <div className="flex flex-wrap items-center gap-3 mb-1">
                     <h3
-                      className="text-lg md:text-xl font-bold text-[oklch(0.12_0.005_285)]"
+                      className="text-lg md:text-xl font-bold text-[oklch(0.12_0.005_285)] group-hover:text-[oklch(0.52_0.22_25)] transition-colors duration-300"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       {project.title}
                     </h3>
-                    <span className="text-xs font-mono bg-[oklch(0.94_0.002_285)] px-2 py-0.5 text-[oklch(0.55_0.01_285)]">
+                    <span className="text-[10px] font-mono bg-[oklch(0.94_0.002_285)] px-2 py-0.5 text-[oklch(0.55_0.01_285)] uppercase tracking-wider">
                       {project.type}
                     </span>
                   </div>
-                  <p
-                    className="text-sm text-[oklch(0.52_0.22_25)] font-mono"
+                  <motion.p
+                    animate={{ opacity: 1, x: 0 }}
+                    className="text-sm text-[oklch(0.52_0.22_25)] font-mono flex items-center gap-2"
                   >
-                    ✦ {project.highlight}
-                  </p>
+                    <span className="text-[10px] opacity-60">✦</span> {project.highlight}
+                  </motion.p>
                 </div>
-                <span className="text-sm font-mono text-[oklch(0.65_0.01_285)]">
+
+                {/* Year */}
+                <span className="text-sm font-mono text-[oklch(0.65_0.01_285)] self-center pt-1">
                   {project.year}
                 </span>
               </div>
 
-              {/* Expanded detail */}
-              <div
-                className={`overflow-hidden transition-all duration-400 ease-in-out ${
-                  hoveredIdx === i ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="px-6 md:px-8 pb-8">
-                  <div className="border-t border-[oklch(0.92_0.002_285)] pt-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                      <div>
-                        <p className="text-xs font-mono text-[oklch(0.52_0.22_25)] tracking-widest uppercase mb-2">
-                          Problem
-                        </p>
-                        <p
-                          className="text-sm text-[oklch(0.35_0.005_285)] leading-relaxed"
-                          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
-                        >
-                          {project.problem}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs font-mono text-[oklch(0.52_0.22_25)] tracking-widest uppercase mb-2">
-                          Solution
-                        </p>
-                        <p
-                          className="text-sm text-[oklch(0.35_0.005_285)] leading-relaxed"
-                          style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
-                        >
-                          {project.solution}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs font-mono text-[oklch(0.52_0.22_25)] tracking-widest uppercase mb-2">
-                          Result
-                        </p>
-                        <p
-                          className="text-sm font-medium text-[oklch(0.25_0.005_285)] leading-relaxed"
-                          style={{ fontFamily: "'DM Sans', sans-serif" }}
-                        >
-                          {project.result}
-                        </p>
+              {/* Accordion Expansion */}
+              <AnimatePresence initial={false}>
+                {hoveredIdx === i && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 md:px-8 pb-8">
+                      <div className="border-t border-[oklch(0.92_0.002_285)] pt-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                          <div>
+                            <p className="text-[10px] font-mono text-[oklch(0.52_0.22_25)] tracking-[0.2em] uppercase mb-3">
+                              Problem
+                            </p>
+                            <p
+                              className="text-sm text-[oklch(0.35_0.005_285)] leading-relaxed"
+                              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
+                            >
+                              {project.problem}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-[10px] font-mono text-[oklch(0.52_0.22_25)] tracking-[0.2em] uppercase mb-3">
+                              Solution
+                            </p>
+                            <p
+                              className="text-sm text-[oklch(0.35_0.005_285)] leading-relaxed"
+                              style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
+                            >
+                              {project.solution}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-[10px] font-mono text-[oklch(0.52_0.22_25)] tracking-[0.2em] uppercase mb-3">
+                              Result
+                            </p>
+                            <p
+                              className="text-sm font-medium text-[oklch(0.25_0.005_285)] leading-relaxed"
+                              style={{ fontFamily: "'DM Sans', sans-serif" }}
+                            >
+                              {project.result}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-2 pt-4">
+                          {project.stack.map((tech) => (
+                            <span key={tech} className="skill-tag">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {project.stack.map((tech) => (
-                        <span key={tech} className="skill-tag">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              
+              {/* Interaction Guide Line (only shows on hover) */}
+              <motion.div 
+                className="absolute left-0 top-0 bottom-0 w-1 bg-[oklch(0.52_0.22_25)]"
+                animate={{ scaleY: hoveredIdx === i ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
           ))}
         </div>
       </div>
