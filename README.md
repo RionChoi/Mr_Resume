@@ -1,6 +1,6 @@
 # Mr_Resume: Professional Dev Portfolio 🚀
 
-[한국어 버전](#한국어-버전) | [English Version](#english-version)
+[한국어 버전](#한국어-버전) | [English Version](#english-version) | [Log](README_LOG.md)
 
 ---
 
