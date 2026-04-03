@@ -1,0 +1,205 @@
+/*
+ * DESIGN PHILOSOPHY: Swiss International Typographic Style
+ * =========================================================
+ * - Typography-first: Playfair Display (headings) + DM Sans (body) + JetBrains Mono (code)
+ * - Color: Pure white bg + near-black text + single red accent (#E63946)
+ * - Layout: Asymmetric 2-column grid, left narrow label + right wide content
+ * - Section numbers: Large gray background numerals (01, 02, 03...)
+ * - No decorative elements — whitespace IS the design
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  /* Swiss Style Color System */
+  --radius: 0.125rem; /* Almost no border radius — sharp edges */
+  
+  --background: oklch(0.99 0 0);          /* Pure white */
+  --foreground: oklch(0.12 0.005 285);    /* Near black */
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0.12 0.005 285);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.12 0.005 285);
+  
+  /* Red accent — Swiss design signature */
+  --primary: oklch(0.52 0.22 25);         /* #E63946 red */
+  --primary-foreground: oklch(0.99 0 0);
+  
+  --secondary: oklch(0.96 0.002 285);
+  --secondary-foreground: oklch(0.25 0.005 285);
+  --muted: oklch(0.94 0.002 285);
+  --muted-foreground: oklch(0.55 0.01 285);
+  --accent: oklch(0.94 0.002 285);
+  --accent-foreground: oklch(0.12 0.005 285);
+  --destructive: oklch(0.52 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.003 285);
+  --input: oklch(0.88 0.003 285);
+  --ring: oklch(0.52 0.22 25);
+  
+  --chart-1: oklch(0.52 0.22 25);
+  --chart-2: oklch(0.35 0.01 285);
+  --chart-3: oklch(0.55 0.01 285);
+  --chart-4: oklch(0.75 0.01 285);
+  --chart-5: oklch(0.88 0.003 285);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  ::selection {
+    background-color: oklch(0.52 0.22 25 / 0.2);
+    color: oklch(0.12 0.005 285);
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1320px;
+    }
+  }
+
+  /* Swiss Style Section Number */
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 900;
+    color: oklch(0.94 0.002 285);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* Red accent line */
+  .accent-line {
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background-color: oklch(0.52 0.22 25);
+  }
+
+  /* Skill tag */
+  .skill-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.625rem;
+    border: 1.5px solid oklch(0.88 0.003 285);
+    color: oklch(0.35 0.005 285);
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease;
+  }
+  .skill-tag:hover {
+    border-color: oklch(0.52 0.22 25);
+    color: oklch(0.52 0.22 25);
+  }
+
+  /* Timeline connector */
+  .timeline-line {
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    bottom: -1.5rem;
+    width: 1px;
+    background: oklch(0.88 0.003 285);
+  }
+
+  /* Scroll animation base */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.96 0.002 285);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.52 0.22 25);
+}
