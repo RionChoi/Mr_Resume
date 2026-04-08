@@ -73,13 +73,13 @@ export default function Navigation() {
               className="font-mono text-xs font-bold tracking-widest uppercase text-[oklch(0.52_0.22_25)]"
               style={{ letterSpacing: "0.2em" }}
             >
-              AK
+              RC
             </span>
             <span
               className="hidden sm:block text-sm font-medium text-[oklch(0.35_0.005_285)]"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              Alex Kim
+              Rion Choi
             </span>
           </a>
 
