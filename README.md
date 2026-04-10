@@ -25,6 +25,8 @@
 - **Icons**: Lucide React
 - **Animations**: Framer Motion
 - **Data Visualization**: Recharts
+- **State Management**: Zustand
+- **Data Fetching**: React Query (TanStack Query), Axios
 - **Forms & Validation**: React Hook Form, Zod
 - **Typography**: Playfair Display (Headings), DM Sans (Body), JetBrains Mono (Code)
 
@@ -49,5 +51,14 @@ src/
 ├── lib/            # Utility functions & Shared logic
 └── styles/         # Global CSS & Tailwind configuration
 ```
+
+### 🛠 Infrastructure & Common Patterns
+
+We use a standardized approach for data fetching and state management:
+
+- **Axios Instance**: `src/lib/axios.ts` with global interceptors.
+- **Query Provider**: `src/providers/QueryProvider.tsx` wraps the app.
+- **Global Store**: `src/store/useStore.ts` for persistent state (with middleware).
+- **Custom Hooks**: `src/hooks/useQueries.ts` provides `useApiGet` and `useApiMutation` for clean integration.
 
 _Created by Antigravity AI for RionChoi (ekko68)_

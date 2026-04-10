@@ -23,6 +23,7 @@
 - **아이콘**: Lucide React
 - **애니메이션**: Framer Motion
 - **데이터 시각화**: Recharts
+- **데이터 관리**: React Query, Axios, Zustand
 - **폼 및 검증**: React Hook Form, Zod
 - **타이포그래피**: Playfair Display (제목), DM Sans (본문), JetBrains Mono (코드)
 
@@ -42,11 +43,22 @@ src/
 ├── app/            # Next.js App Router (Pages, Layouts)
 ├── components/     # UI Components (Hero, Skills, Projects, etc.)
 │   └── ui/         # Base Shadcn/Radix components
-├── contexts/       # Global State Management
-├── hooks/          # Custom React Hooks
-├── lib/            # Utility functions & Shared logic
-└── styles/         # Global CSS & Tailwind configuration
+├── store/          # Zustand Global States
+├── providers/      # React Query & Context Providers
+├── contexts/       # Legacy Contexts
+├── hooks/          # Custom React Hooks (useQueries 등)
+├── lib/            # Axios 인스턴스 및 공통 로직
+└── styles/         # Global CSS & Tailwind 설정
 ```
+
+### 🛠 인프라 및 설정 가이드
+
+데이터 페칭 및 상태 관리를 위한 표준화된 패턴을 사용합니다:
+
+- **Axios 공통화**: `src/lib/axios.ts`에서 인터셉터를 통한 응답 처리를 통합 관리합니다.
+- **Query Provider**: `src/providers/QueryProvider.tsx`가 앱 전체를 래핑합니다.
+- **전역 스토어**: `src/store/useStore.ts`에서 Zustand를 이용한 영구 상태(Local Storage)를 관리합니다.
+- **공통 훅**: `src/hooks/useQueries.ts`의 `useApiGet`, `useApiMutation`을 통해 일관된 API 호출 패턴을 유지합니다.
 
 ### 🚀 시작하기
 
