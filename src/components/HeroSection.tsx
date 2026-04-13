@@ -11,10 +11,10 @@ import { useEffect, useRef } from "react";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663509717094/YA5pfxp2kKZuuAiquifc3V/hero-bg-FabyHTdsWTqNWPZZoKubdG.webp";
 
 const stats = [
-  { value: "5+", label: "Years Experience" },
-  { value: "1", label: "Full SPA Migration" },
-  { value: "12k+", label: "Lines Refactored" },
-  { value: "3", label: "EU Projects" },
+  { value: "10+", label: "Years Experience" },
+  { value: "20+", label: "Enterprise Projects" },
+  { value: "MSA", label: "Architecture Expert" },
+  { value: "Full", label: "Stack Developer" },
 ];
 
 export default function HeroSection() {
@@ -80,7 +80,7 @@ export default function HeroSection() {
               <span
                 className="text-xs font-mono font-medium tracking-[0.25em] uppercase text-[oklch(0.52_0.22_25)]"
               >
-                Full-Stack Web Developer
+                Senior Full-Stack Developer
               </span>
             </div>
 
@@ -89,18 +89,18 @@ export default function HeroSection() {
               className="text-[clamp(2.8rem,7vw,6rem)] font-bold leading-[1.05] tracking-tight text-[oklch(0.12_0.005_285)] mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Turning Legacy
+              Building
               <br />
-              <em className="not-italic text-[oklch(0.52_0.22_25)]">Code</em> into
+              <em className="not-italic text-[oklch(0.52_0.22_25)]">Enterprise</em>
               <br />
-              Modern{" "}
               <span className="relative inline-block">
-                React SPA
+                Platforms
                 <span
                   className="absolute bottom-1 left-0 right-0 h-[3px] bg-[oklch(0.52_0.22_25)]"
                   style={{ bottom: "0.1em" }}
                 />
-              </span>
+              </span>{" "}
+              at Scale
             </h1>
 
             {/* Subheadline */}
@@ -108,9 +108,10 @@ export default function HeroSection() {
               className="text-lg text-[oklch(0.45_0.008_285)] max-w-xl leading-relaxed mb-10"
               style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
             >
-              I specialize in analyzing legacy web systems and rebuilding them as
-              high-performance, maintainable Single-Page Applications with React.
-              Based in Seoul — open to European remote opportunities.
+              10+ years of enterprise platform development — from monolithic to
+              microservices. Specialized in Java/Spring Boot backend and React
+              frontend for financial and public sector systems.
+              Based in Seoul — open to European opportunities.
             </p>
 
             {/* CTA buttons */}

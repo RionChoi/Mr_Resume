@@ -11,66 +11,65 @@ import { useEffect, useRef } from "react";
 const experiences = [
   {
     period: "2022 — Present",
-    role: "Frontend Developer (Freelance)",
-    company: "Self-Employed",
-    location: "Seoul, South Korea (Remote)",
-    type: "Freelance",
+    role: "Senior Full-Stack Developer",
+    company: "Freelance / Contract",
+    location: "Seoul, South Korea",
+    type: "Contract",
     description:
-      "Specialized in legacy web system analysis and React SPA migration. Clients primarily from South Korea and Europe (Netherlands, Germany).",
+      "Specialized in enterprise platform modernization and full-stack development for major Korean financial institutions and government projects. Leading architecture transformation from monolithic to MSA systems.",
     contributions: [
-      "Delivered 4 complete legacy-to-React migrations, each with full feature parity",
-      "Reduced average page load time by 70% across all projects",
-      "Established a repeatable 4-phase migration methodology now used as a template",
-      "Maintained 100% client retention — all clients returned for additional projects",
+      "Led IBK BOX platform transformation from Monolithic to MSA, improving login speed by 70%",
+      "Built AI chatbot service for Shinhan Bank's SOL mobile app with React frontend and Java backend",
+      "Led development team for Gwangju AI Industrial Convergence admin platform",
+      "Developed CESCO's e-commerce and consulting platform with Vue.js and Spring Boot",
     ],
-    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Node.js"],
+    stack: ["React", "Java", "Spring Boot", "MSA", "JWT", "Oracle", "PostgreSQL", "Vue.js"],
   },
   {
-    period: "2020 — 2022",
-    role: "Junior Web Developer",
-    company: "Digital Agency (Seoul)",
+    period: "2018 — 2022",
+    role: "Mid-Level Java Developer",
+    company: "Enterprise SI Projects",
     location: "Seoul, South Korea",
     type: "Full-time",
     description:
-      "Worked on a team of 8 developers building and maintaining client websites. Primary responsibility was frontend implementation and legacy system maintenance.",
+      "Worked on large-scale enterprise SI projects for major Korean corporations including KB Kookmin Bank, LG U+, Samsung SDS, and Korean Air. Responsible for backend API development, database optimization, and frontend implementation.",
     contributions: [
-      "Maintained and extended 12 legacy jQuery-based client websites",
-      "Led the migration of the agency's internal project management tool from PHP to React",
-      "Introduced ESLint and Prettier to the team's workflow, reducing code review time by 30%",
-      "Mentored 2 junior developers in modern JavaScript practices",
+      "Developed banking system features for KB Kookmin Bank and Daegu Bank",
+      "Built telecom service platforms for LG U+ with Java and Spring framework",
+      "Contributed to Samsung SDS enterprise solutions with full-stack capabilities",
+      "Delivered Korean Air's internal systems with focus on reliability and performance",
     ],
-    stack: ["React", "JavaScript", "jQuery", "PHP", "MySQL", "SCSS"],
+    stack: ["Java", "Spring", "Oracle", "JSP", "jQuery", "Tibero", "MySQL"],
   },
   {
-    period: "2019 — 2020",
-    role: "Web Development Intern",
-    company: "Startup (E-Commerce)",
+    period: "2014 — 2018",
+    role: "Junior Java Developer",
+    company: "SI Companies (Seoul)",
     location: "Seoul, South Korea",
-    type: "Internship",
+    type: "Full-time",
     description:
-      "First professional role. Responsible for frontend bug fixes and feature additions on a WooCommerce-based e-commerce platform.",
+      "Started career in enterprise SI development, building websites and management systems for government institutions and cultural organizations. Gained foundational skills in Java ecosystem and database management.",
     contributions: [
-      "Fixed 40+ frontend bugs in the first 3 months",
-      "Built a custom product filter component in vanilla JavaScript",
-      "Learned to navigate a large, undocumented legacy codebase independently",
-      "Completed the company's first mobile-responsive redesign of the checkout flow",
+      "Built digital platforms for National Library of Korea and Korean Folk Village",
+      "Developed management systems for KOICA (Korea International Cooperation Agency)",
+      "Implemented frontend interfaces with HTML, CSS, JavaScript, and jQuery",
+      "Learned enterprise development practices including version control, code review, and deployment",
     ],
-    stack: ["HTML", "CSS", "JavaScript", "jQuery", "WordPress", "PHP"],
+    stack: ["Java", "JSP", "jQuery", "HTML", "CSS", "Oracle", "MySQL", "Tomcat"],
   },
 ];
 
 const education = [
   {
-    period: "2015 — 2019",
-    degree: "B.Sc. Computer Science",
-    institution: "Seoul National University",
-    note: "Focus: Software Engineering, Web Technologies",
+    period: "2010 — 2014",
+    degree: "Computer Science / IT Related",
+    institution: "University (Seoul, South Korea)",
+    note: "Focus: Software Engineering, Database Systems",
   },
 ];
 
 const certifications = [
-  { name: "AWS Certified Cloud Practitioner", year: "2023", issuer: "Amazon Web Services" },
-  { name: "Google Analytics Certified", year: "2022", issuer: "Google" },
+  { name: "정보처리기사 (Engineer Information Processing)", year: "2014", issuer: "한국산업인력공단 (HRD Korea)" },
 ];
 
 export default function ExperienceSection() {
@@ -142,7 +141,7 @@ export default function ExperienceSection() {
                   className="text-3xl font-bold text-[oklch(0.12_0.005_285)]"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  5+ Years
+                  10+ Years
                 </p>
               </div>
               <div className="h-px bg-[oklch(0.88_0.003_285)]" />

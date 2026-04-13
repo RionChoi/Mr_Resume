@@ -95,9 +95,9 @@ export default function ContactSection() {
                   className="text-base text-[oklch(0.65_0.01_285)] leading-relaxed max-w-lg"
                   style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
                 >
-                  I'm currently open to remote frontend/full-stack positions and freelance projects,
-                  particularly with European companies. If you have a legacy system that needs
-                  modernization — that's my specialty.
+                  I'm currently open to full-stack developer positions, particularly with
+                  European companies. With 10+ years of enterprise experience in Java/Spring Boot
+                  and React, I bring proven expertise in platform modernization and MSA architecture.
                 </p>
               </div>
 
@@ -109,18 +109,18 @@ export default function ContactSection() {
                 {[
                   {
                     label: "Email",
-                    value: "alex.kim@example.com",
-                    link: "mailto:alex.kim@example.com",
+                    value: "haijun82923@gmail.com",
+                    link: "mailto:haijun82923@gmail.com",
                   },
                   {
                     label: "LinkedIn",
-                    value: "linkedin.com/in/alexkim-dev",
-                    link: "https://linkedin.com",
+                    value: "linkedin.com/in/ekko68",
+                    link: "https://linkedin.com/in/ekko68",
                   },
                   {
                     label: "GitHub",
-                    value: "github.com/alexkim-dev",
-                    link: "https://github.com",
+                    value: "github.com/ekko68",
+                    link: "https://github.com/ekko68",
                   },
                   {
                     label: "Timezone",
@@ -294,25 +294,25 @@ export default function ContactSection() {
                 className="font-mono text-xs font-bold tracking-widest text-[oklch(0.52_0.22_25)]"
                 style={{ letterSpacing: "0.2em" }}
               >
-                AK
+                HC
               </span>
               <span
                 className="text-xs text-[oklch(0.45_0.008_285)]"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
-                Alex Kim — Web Developer
+                HaeGun Choi — Full-Stack Developer
               </span>
             </div>
             <p
               className="text-xs text-[oklch(0.35_0.005_285)] font-mono"
             >
-              Built with React + TypeScript + Tailwind CSS
+              Built with Next.js + TypeScript + Tailwind CSS
             </p>
             <p
               className="text-xs text-[oklch(0.35_0.005_285)]"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              © 2026 Alex Kim. All rights reserved.
+              © 2026 HaeGun Choi. All rights reserved.
             </p>
           </div>
         </div>

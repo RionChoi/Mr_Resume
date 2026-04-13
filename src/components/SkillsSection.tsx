@@ -10,69 +10,69 @@ import { useEffect, useRef } from "react";
 
 const skillGroups = [
   {
-    category: "Core Expertise",
-    note: "Daily use, production-grade",
+    category: "Backend",
+    note: "Primary expertise, 10+ years",
     skills: [
-      { name: "React 18", level: 5 },
-      { name: "TypeScript", level: 5 },
-      { name: "JavaScript (ES2022+)", level: 5 },
+      { name: "Java", level: 5 },
+      { name: "Spring Boot", level: 5 },
+      { name: "Spring Framework", level: 5 },
+      { name: "Spring Batch", level: 4 },
+      { name: "RESTful API Design", level: 5 },
+    ],
+  },
+  {
+    category: "Frontend",
+    note: "Modern UI development",
+    skills: [
+      { name: "React", level: 4 },
+      { name: "Vue.js", level: 3 },
+      { name: "JavaScript (ES6+)", level: 5 },
       { name: "HTML5 / CSS3", level: 5 },
-      { name: "Legacy Code Analysis", level: 5 },
+      { name: "JSP / jQuery", level: 5 },
     ],
   },
   {
-    category: "React Ecosystem",
-    note: "State, routing, data fetching",
+    category: "Database",
+    note: "Enterprise data management",
     skills: [
-      { name: "React Router v6", level: 5 },
-      { name: "Zustand", level: 4 },
-      { name: "React Query", level: 4 },
-      { name: "Redux Toolkit", level: 4 },
-      { name: "Framer Motion", level: 3 },
+      { name: "Oracle", level: 5 },
+      { name: "Tibero", level: 4 },
+      { name: "MySQL", level: 4 },
+      { name: "PostgreSQL", level: 4 },
+      { name: "MyBatis", level: 5 },
     ],
   },
   {
-    category: "Build & Tooling",
-    note: "Modern development workflow",
+    category: "Architecture",
+    note: "System design & patterns",
     skills: [
-      { name: "Vite", level: 5 },
-      { name: "Webpack", level: 4 },
-      { name: "Git / GitHub", level: 5 },
-      { name: "ESLint / Prettier", level: 5 },
-      { name: "Vitest / Jest", level: 4 },
+      { name: "MSA (Microservices)", level: 4 },
+      { name: "Monolithic → MSA", level: 5 },
+      { name: "JWT Authentication", level: 4 },
+      { name: "API Gateway", level: 4 },
+      { name: "SSO Integration", level: 4 },
     ],
   },
   {
-    category: "Styling",
-    note: "UI implementation",
+    category: "DevOps & Tools",
+    note: "CI/CD & monitoring",
     skills: [
-      { name: "Tailwind CSS", level: 5 },
-      { name: "CSS Modules", level: 4 },
-      { name: "Styled Components", level: 4 },
-      { name: "SCSS / Sass", level: 4 },
-      { name: "shadcn/ui", level: 4 },
+      { name: "Git / GitLab", level: 5 },
+      { name: "Jenkins (CI/CD)", level: 4 },
+      { name: "DevEye", level: 4 },
+      { name: "Jennifer APM", level: 4 },
+      { name: "Redis", level: 3 },
     ],
   },
   {
-    category: "Backend / API",
-    note: "Full-stack capability",
+    category: "Mobile & Cross-Platform",
+    note: "Hybrid app development",
     skills: [
-      { name: "Node.js / Express", level: 4 },
-      { name: "REST API Design", level: 4 },
-      { name: "PostgreSQL", level: 3 },
-      { name: "PHP (Legacy Reading)", level: 4 },
-      { name: "MySQL", level: 3 },
-    ],
-  },
-  {
-    category: "Migration Skills",
-    note: "Unique specialization",
-    skills: [
-      { name: "jQuery → React", level: 5 },
-      { name: "MPA → SPA", level: 5 },
-      { name: "Code Archaeology", level: 5 },
-      { name: "Incremental Refactor", level: 5 },
-      { name: "Performance Audit", level: 4 },
+      { name: "React Native", level: 3 },
+      { name: "WebView (Hybrid App)", level: 4 },
+      { name: "Responsive Design", level: 5 },
+      { name: "Cross-Browser Compat.", level: 5 },
+      { name: "Tomcat / WAS", level: 5 },
     ],
   },
 ];
@@ -199,10 +199,11 @@ export default function SkillsSection() {
             className="text-sm text-[oklch(0.35_0.005_285)] leading-relaxed"
             style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
           >
-            <strong className="font-semibold text-[oklch(0.12_0.005_285)]">Note on Migration Skills:</strong>{" "}
-            My ability to read and understand legacy PHP, jQuery, and unstructured HTML/CSS is a deliberate skill,
-            not a relic. Understanding old code is the prerequisite for replacing it correctly.
-            I've read codebases with no documentation, no version control, and no original developers available.
+            <strong className="font-semibold text-[oklch(0.12_0.005_285)]">Note on Architecture Skills:</strong>{" "}
+            My experience spans the full transformation journey — from analyzing monolithic legacy systems to
+            designing and implementing MSA architectures. Having worked on 20+ enterprise projects across
+            banking, telecom, and public sector, I bring deep understanding of both legacy constraints and
+            modern best practices.
           </p>
         </div>
       </div>

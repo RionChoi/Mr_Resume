@@ -12,59 +12,73 @@ import { motion, AnimatePresence } from "framer-motion";
 const projects = [
   {
     num: "01",
-    title: "E-Commerce SPA Migration",
-    type: "Legacy Migration",
+    title: "IBK BOX Platform Modernization",
+    type: "Enterprise SaaS",
     year: "2024",
     problem:
-      "A 7-year-old WooCommerce site with 3-second TTFB and poor mobile conversion rates needed modernization without losing SEO rankings.",
+      "IBK Industrial Bank's SME investment platform was built on a monolithic ExBuilder framework with server-side rendering. The system suffered from tight coupling, slow deployments, and no CI/CD — login alone took 20 seconds.",
     solution:
-      "Analyzed the existing PHP templates and WooCommerce hooks, then rebuilt the frontend as a React SPA with Next.js for SSR/SSG to preserve SEO.",
-    result: "TTFB reduced from 3.2s to 0.4s. Mobile conversion rate +34%.",
-    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "WooCommerce REST API"],
-    highlight: "SEO-safe migration with zero ranking loss",
+      "Led full-stack transformation to MSA architecture with React SPA frontend, Spring Boot REST APIs, JWT gateway middleware, and CI/CD pipeline. Implemented React Native WebView for mobile hybrid strategy.",
+    result: "Login speed improved 70% (20s→5s). Mobile dev teams reduced from 3 to 1. Achieved independent service deployment with automated CI/CD.",
+    stack: ["React", "Spring Boot", "Java", "MSA", "JWT", "Jenkins", "Tibero", "React Native"],
+    highlight: "Monolithic → MSA with 70% login speed improvement",
     color: "oklch(0.52_0.22_25)",
   },
   {
     num: "02",
-    title: "Internal Dashboard Rebuild",
-    type: "Greenfield + Migration",
+    title: "Shinhan SOL App AI Chatbot",
+    type: "AI Chatbot / FinTech",
     year: "2023",
     problem:
-      "A logistics company's internal tool was built with jQuery and Bootstrap 3. Data tables were slow with 10,000+ rows and no filtering.",
+      "Shinhan Bank's mobile banking app needed an AI-powered chatbot for customer service automation. The existing system lacked natural language processing capabilities and had no admin management interface.",
     solution:
-      "Rebuilt as React SPA with TanStack Table for virtualized rendering, React Query for server state, and a custom filter system.",
-    result: "Table render time: 4.8s → 180ms. User satisfaction score +62%.",
-    stack: ["React 18", "TanStack Table", "React Query", "Zustand", "Recharts"],
-    highlight: "10,000+ rows rendered in 180ms",
-    color: "oklch(0.35_0.01_285)",
-  },
-  {
-    num: "03",
-    title: "Multi-Language Corporate Site",
-    type: "New Development",
-    year: "2024",
-    problem:
-      "A mid-size European manufacturer needed a new corporate website supporting 4 languages with CMS integration and GDPR compliance.",
-    solution:
-      "Built with React + i18next for internationalization, Contentful as headless CMS, and implemented cookie consent management per GDPR.",
-    result: "Launched in 6 weeks. 4 languages live. GDPR audit passed.",
-    stack: ["React", "i18next", "Contentful", "Vite", "Framer Motion"],
-    highlight: "GDPR-compliant, 4-language SPA",
+      "Developed new AI chatbot service integrated with Shinhan SOL mobile app. Built React-based admin management pages for chatbot training data and conversation flow management. Implemented backend APIs with Java and Oracle.",
+    result: "Successfully launched AI chatbot service on Shinhan SOL App. Admin system enabled non-technical staff to manage chatbot responses.",
+    stack: ["React", "Java", "Oracle", "Spring Boot", "AI/NLP", "REST API"],
+    highlight: "AI chatbot for Korea's major banking app",
     color: "oklch(0.45_0.12_200)",
   },
   {
-    num: "04",
-    title: "Real Estate Listing Platform",
-    type: "Full-Stack SPA",
-    year: "2023",
+    num: "03",
+    title: "Gwangju AI Industrial Convergence",
+    type: "AI Platform / Admin System",
+    year: "2022",
     problem:
-      "A real estate agency was using a third-party platform that charged per listing. They needed an owned solution with map integration.",
+      "Gwangju Metropolitan City's AI convergence initiative needed a comprehensive admin management system for their industrial platform. The project required leading a development team and building the full admin infrastructure from scratch.",
     solution:
-      "Built a full-stack SPA with React frontend, Node.js/Express API, PostgreSQL database, and Google Maps integration for property visualization.",
-    result: "Saved €800/month in platform fees. 200+ listings managed.",
-    stack: ["React", "Node.js", "Express", "PostgreSQL", "Google Maps API"],
-    highlight: "€800/month cost savings achieved",
+      "Led the development team as technical lead. Built comprehensive admin site using React frontend with Java/Spring Boot backend and PostgreSQL database. Implemented data management dashboards and user administration features.",
+    result: "Delivered complete admin platform on schedule. Successfully led team through full development lifecycle from requirements to deployment.",
+    stack: ["React", "Java", "Spring Boot", "PostgreSQL", "Admin Dashboard"],
+    highlight: "Team lead for government AI platform",
+    color: "oklch(0.35_0.01_285)",
+  },
+  {
+    num: "04",
+    title: "CESCO Labeling Consulting Platform",
+    type: "E-Commerce / Consulting",
+    year: "2022",
+    problem:
+      "CESCO, a major Korean pest control and food safety company, needed a new e-commerce shopping mall and consulting website for their labeling services. The existing system was outdated and couldn't handle modern e-commerce requirements.",
+    solution:
+      "Developed new shopping mall and consulting website using Vue.js for frontend with Java/Spring Boot backend and Oracle database. Implemented product catalog, order management, and consulting request workflows.",
+    result: "Launched new e-commerce platform and consulting site. Modernized the customer-facing digital experience for CESCO's labeling services division.",
+    stack: ["Vue.js", "Java", "Spring Boot", "Oracle", "E-Commerce"],
+    highlight: "Full e-commerce platform for enterprise client",
     color: "oklch(0.42_0.08_150)",
+  },
+  {
+    num: "05",
+    title: "Enterprise SI Portfolio (2014–2021)",
+    type: "7+ Years SI Experience",
+    year: "2014–2021",
+    problem:
+      "Accumulated extensive enterprise SI experience across major Korean corporations including KB Kookmin Bank, LG U+, Samsung SDS, Korean Air, National Library, KOICA, and Korean Folk Village — building mission-critical systems in finance, telecom, and public sector.",
+    solution:
+      "Delivered 10+ enterprise projects spanning banking systems, telecom platforms, government portals, and cultural institution websites. Progressed from junior developer to senior role, gaining deep expertise in Java ecosystem and enterprise architecture patterns.",
+    result: "Built foundation in enterprise-grade development practices, team collaboration, and large-scale system maintenance across diverse industries.",
+    stack: ["Java", "Spring", "Oracle", "JSP", "jQuery", "MySQL", "Tomcat"],
+    highlight: "10+ enterprise projects across finance, telecom & public sector",
+    color: "oklch(0.40_0.05_60)",
   },
 ];
 

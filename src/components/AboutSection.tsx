@@ -10,16 +10,16 @@ import { useEffect, useRef } from "react";
 
 const values = [
   {
-    title: "Code Archaeology",
-    desc: "I read legacy codebases the way historians read ancient texts — finding the original intent beneath years of accumulated workarounds.",
+    title: "Architecture-Driven Thinking",
+    desc: "I approach every project by understanding the system as a whole first — analyzing AS-IS architecture, identifying bottlenecks, and designing TO-BE solutions that scale. My MSA transformation of IBK BOX exemplifies this methodology.",
   },
   {
-    title: "Incremental Modernization",
-    desc: "I believe in surgical refactoring over big-bang rewrites. Each migration phase delivers working software while reducing technical debt.",
+    title: "Full-Stack Ownership",
+    desc: "From React frontend to Spring Boot backend, from database optimization to CI/CD pipeline setup — I take end-to-end responsibility. This holistic view enables me to make better architectural decisions at every layer.",
   },
   {
-    title: "Documentation-First",
-    desc: "Every architectural decision I make is documented with rationale. Future developers (including myself) deserve to understand the 'why'.",
+    title: "Performance as a Feature",
+    desc: "I treat performance optimization as a core deliverable, not an afterthought. Using monitoring tools like Jennifer APM, I identify bottlenecks through data — reducing IBK BOX login time from 20s to 5s through systematic analysis.",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function AboutSection() {
                   Focus
                 </p>
                 <p className="text-sm text-[oklch(0.35_0.005_285)]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  React · TypeScript · Legacy Migration
+                  Java · Spring Boot · React · MSA
                 </p>
               </div>
             </div>
@@ -126,19 +126,19 @@ export default function AboutSection() {
                 className="text-2xl font-light text-[oklch(0.20_0.005_285)] leading-relaxed mb-6"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
-                I'm a full-stack web developer with a particular expertise in{" "}
-                <strong className="font-semibold">legacy system analysis and modern React migration</strong>.
-                My most significant project involved reverse-engineering an entire legacy website from its
-                source code and rebuilding it as a production-grade SPA.
+                I'm a senior full-stack developer with 10+ years of experience building{" "}
+                <strong className="font-semibold">enterprise platforms for Korean financial institutions and public sector</strong>.
+                My most impactful project was transforming IBK Industrial Bank's investment platform
+                from monolithic architecture to microservices, achieving 70% login speed improvement.
               </p>
               <p
                 className="text-base text-[oklch(0.45_0.008_285)] leading-relaxed"
                 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
               >
-                What sets me apart is my ability to read and understand existing codebases — not just write
-                new ones. I approach legacy systems with curiosity rather than frustration, finding the
-                business logic embedded in years of accumulated code and preserving it while modernizing
-                the architecture.
+                What sets me apart is my ability to bridge the gap between legacy enterprise systems
+                and modern architecture. With deep expertise in both Java/Spring Boot backend and React
+                frontend, I deliver end-to-end solutions — from MSA architecture design and API development
+                to responsive UI implementation and CI/CD pipeline automation.
               </p>
             </div>
 

@@ -14,87 +14,87 @@ const CASE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663509717094/YA5pf
 const phases = [
   {
     num: "01",
-    title: "Legacy Code Archaeology",
-    duration: "3 weeks",
+    title: "MSA Architecture Transformation",
+    duration: "Analysis, Design, Build",
     tasks: [
-      "Mapped all 47 HTML pages and their interdependencies",
-      "Identified 12 distinct jQuery plugins with overlapping functionality",
-      "Documented all server-side data endpoints (PHP/MySQL)",
-      "Catalogued 3,200+ lines of inline CSS across templates",
-      "Reverse-engineered business logic from spaghetti code",
+      "Analyzed AS-IS monolithic architecture: ExBuilder + JSP SSR with tight coupling, no CI/CD, complex procedural deployment",
+      "Designed TO-BE MSA with independent service deployment, separation of concerns (React SPA + Spring Boot REST API)",
+      "Built Gateway middleware with JWT parsing for forwarding user identity across microservices",
+      "Migrated Spring Legacy XML configuration to Spring Boot auto-configuration",
+      "Planned phased transition from monolithic to distributed system",
     ],
-    tools: ["Chrome DevTools", "Regex analysis", "Dependency mapping", "Git blame"],
-    outcome: "Complete architectural blueprint of the legacy system",
+    tools: ["Spring Boot", "Docker", "Kubernetes", "JWT", "Gateway", "Git"],
+    outcome: "Microservices-ready architecture with independent deployment capability",
   },
   {
     num: "02",
-    title: "Architecture Design",
-    duration: "1 week",
+    title: "React Frontend Development",
+    duration: "User & Back Office + Mobile",
     tasks: [
-      "Defined React component hierarchy based on legacy page structure",
-      "Chose React Router v6 for client-side routing (replaces server-side PHP routing)",
-      "Selected Zustand for state management (lightweight vs. Redux overhead)",
-      "Designed API contract between React frontend and legacy PHP backend",
-      "Planned phased migration to minimize downtime",
+      "Developed React SPA for User Interface and Back Office Console",
+      "Implemented React Native + WebView hybrid app strategy (One Source, Multi-Use)",
+      "Reduced mobile team requirement from 3 separate teams (web + iOS + Android) to 1 unified team",
+      "Built real-time updates without app store review cycles",
+      "Designed responsive component architecture for seamless web and mobile experience",
     ],
-    tools: ["React", "React Router v6", "Zustand", "Vite", "TypeScript"],
-    outcome: "Approved architecture document with team consensus",
+    tools: ["React", "React Native", "TypeScript", "Responsive Design", "WebView"],
+    outcome: "Single codebase supporting web and hybrid mobile applications",
   },
   {
     num: "03",
-    title: "Component Development",
-    duration: "8 weeks",
+    title: "Backend API Modernization",
+    duration: "Java, Spring Boot Development",
     tasks: [
-      "Built 34 reusable React components from scratch",
-      "Migrated all jQuery DOM manipulation to React state/refs",
-      "Converted PHP template variables to React props/context",
-      "Implemented lazy loading for route-based code splitting",
-      "Wrote unit tests for all business-critical components",
+      "Built RESTful APIs with Spring Boot replacing legacy JSP endpoints",
+      "Eliminated configuration hell: migrated from web.xml + context-*.xml to auto-configuration",
+      "Implemented embedded WAS (Tomcat in Jar) ensuring consistent environments across deployments",
+      "Resolved Jar Hell with Spring Boot Starter dependencies",
+      "Enabled independent service scaling and fault isolation",
     ],
-    tools: ["React 18", "TypeScript", "Tailwind CSS", "Vitest", "React Testing Library"],
-    outcome: "100% feature parity with legacy system",
+    tools: ["Java", "Spring Boot", "Mybatis", "Tibero", "Maven", "DevEye"],
+    outcome: "Scalable, maintainable API layer with environment consistency",
   },
   {
     num: "04",
-    title: "Performance Optimization",
-    duration: "2 weeks",
+    title: "SSO Integration & Performance Optimization",
+    duration: "Jennifer Monitoring, Root Cause Analysis",
     tasks: [
-      "Reduced initial bundle size from 2.4MB to 380KB (gzipped)",
-      "Implemented React.memo and useMemo for expensive renders",
-      "Added service worker for offline capability",
-      "Optimized images with WebP conversion and lazy loading",
-      "Achieved Lighthouse score: 94 Performance / 98 Accessibility",
+      "Identified login bottleneck: 20s → 5s target through Jennifer monitoring (X-View charts, transaction profiling)",
+      "Root Cause 1: SSO token issuance speed (8s improvement via optimization)",
+      "Root Cause 2: Session info DB table query overload (2s improvement via strategic indexing)",
+      "Root Cause 3: Unmaintained magicsso MySQL database (5s improvement via cleanup)",
+      "Implemented centralized SSO via Gateway, forwarding authenticated user info across all MSA services",
     ],
-    tools: ["Webpack Bundle Analyzer", "Lighthouse", "Chrome Performance", "Workbox"],
-    outcome: "4.2x faster page load vs. legacy system",
+    tools: ["Jennifer", "MySQL", "Indexing", "Gateway Middleware", "Monitoring", "Tibero"],
+    outcome: "Login speed improved 70% (20s → 5s) with fault isolation across services",
   },
 ];
 
 const metrics = [
-  { label: "Page Load Time", before: "8.4s", after: "2.0s", improvement: "76% faster" },
-  { label: "Bundle Size", before: "2.4 MB", after: "380 KB", improvement: "84% smaller" },
-  { label: "Lighthouse Score", before: "42", after: "94", improvement: "+52 points" },
-  { label: "Code Lines", before: "18,400", after: "6,200", improvement: "66% reduced" },
+  { label: "Login Speed", before: "~20s", after: "~5s", improvement: "70% faster" },
+  { label: "Architecture", before: "Monolithic", after: "MSA", improvement: "Independent Deploy" },
+  { label: "Mobile Dev Teams", before: "3 Teams", after: "1 Team", improvement: "66% reduced" },
+  { label: "Deployment", before: "Manual", after: "Automated", improvement: "Jenkins Pipeline" },
 ];
 
 const techDecisions = [
   {
-    decision: "Zustand over Redux",
+    decision: "React SPA over JSP/SSR",
     rationale:
-      "The legacy app had minimal global state. Redux's boilerplate would have added complexity without benefit. Zustand provided the same patterns with 80% less code.",
-    tradeoff: "Less ecosystem tooling, but sufficient for project scale.",
+      "Separation of concerns enables frontend and backend teams to work independently. React components are reusable across web and mobile (React Native WebView). Independent deployment decouples frontend changes from backend release cycles.",
+    tradeoff: "Initial learning curve for team experienced in JSP/SSR paradigm. Requires frontend state management discipline.",
   },
   {
-    decision: "Vite over CRA",
+    decision: "Spring Boot over Spring Legacy",
     rationale:
-      "Legacy build process took 4+ minutes. Vite's ESM-based dev server reduced this to under 300ms HMR. Critical for developer productivity during the long migration.",
-    tradeoff: "Required custom plugin configuration for legacy asset handling.",
+      "Auto-configuration eliminates XML hell (web.xml, context-*.xml, property file chaos). Embedded WAS (Tomcat in Jar) ensures environment consistency from dev to production. Spring Boot Starters prevent Jar Hell and dependency conflicts.",
+    tradeoff: "Required systematic migration of existing XML configurations and testing of auto-configuration overrides.",
   },
   {
-    decision: "Incremental Migration",
+    decision: "JWT Gateway Middleware",
     rationale:
-      "Rather than a big-bang rewrite, I migrated one page group at a time. This allowed the legacy PHP backend to remain live while the React frontend was developed.",
-    tradeoff: "Required maintaining two codebases for 3 months, but eliminated downtime risk.",
+      "Centralized authentication across MSA services. Gateway parses JWT and forwards user identity via headers to all downstream services. Eliminates N-way SSO complexity and reduces session database load.",
+    tradeoff: "Gateway becomes critical infrastructure (single point of failure mitigated with load balancing and circuit breakers).",
   },
 ];
 
@@ -152,17 +152,15 @@ export default function CaseStudySection() {
             className="text-4xl md:text-5xl font-bold text-[oklch(0.12_0.005_285)] leading-tight mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            Legacy Website → React SPA
+            Monolithic → MSA
             <br />
-            <em style={{ fontStyle: "italic", color: "oklch(0.52_0.22_25)" }}>Full Migration</em>
+            <em style={{ fontStyle: "italic", color: "oklch(0.52_0.22_25)" }}>Platform Modernization</em>
           </h2>
           <p
             className="text-base text-[oklch(0.45_0.008_285)] max-w-2xl leading-relaxed"
             style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 300 }}
           >
-            A complete analysis and reconstruction of a legacy multi-page PHP/jQuery website
-            into a modern, performant React Single-Page Application — without losing a single
-            feature or business logic rule.
+            A complete transformation of IBK Industrial Bank's enterprise investment platform from monolithic architecture to microservices — achieving 70% login speed improvement and enabling independent service deployment with CI/CD automation.
           </p>
         </div>
 
@@ -190,18 +188,15 @@ export default function CaseStudySection() {
                 className="text-base text-[oklch(0.25_0.005_285)] leading-relaxed mb-6"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
-                The client had a 5-year-old PHP website with no version control, 47 separate HTML
-                pages, and a jQuery codebase that had grown organically without architecture.
-                Page load times averaged <strong>8.4 seconds</strong>. Mobile experience was
-                broken on 60% of devices.
+                IBK BOX platform was built on ExBuilder with Monolithic architecture and Server-Side Rendering. Login times exceeded <strong>20 seconds</strong>. The system suffered from tight coupling, slow deployment cycles, and limited scalability.
               </p>
               <div className="space-y-3">
                 {[
-                  "No component reusability — every page duplicated navigation",
-                  "jQuery version conflicts causing silent failures",
-                  "No build process — all assets served unminified",
-                  "Zero test coverage across 18,000+ lines of code",
-                  "Business logic mixed with presentation in PHP templates",
+                  "Tight coupling made small changes risky for the entire system",
+                  "JSP mixed presentation with business logic, blocking frontend/backend separation",
+                  "No horizontal scalability — traffic spikes required scaling the entire server",
+                  "Slow builds and deployment cycles due to monolithic codebase",
+                  "Spring Legacy XML configuration was complex and error-prone",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <span className="w-4 h-4 mt-0.5 flex-shrink-0 flex items-center justify-center">
@@ -228,7 +223,7 @@ export default function CaseStudySection() {
           <h3
             className="text-xs font-mono font-medium tracking-[0.25em] uppercase text-[oklch(0.52_0.22_25)] mb-8"
           >
-            Migration Process — 14 Weeks Total
+            Modernization Roadmap — 4 Major Phases (Aug 2024 - Dec 2025)
           </h3>
 
           {/* Phase tabs */}
