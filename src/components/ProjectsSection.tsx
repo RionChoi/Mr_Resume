@@ -46,17 +46,17 @@ const projects = [
     problem:
       "Gwangju Metropolitan City's AI convergence initiative needed a comprehensive admin management system for their industrial platform. The project required leading a development team and building the full admin infrastructure from scratch.",
     solution:
-      "Led the development team as technical lead. Built comprehensive admin site using React frontend with Java/Spring Boot backend and PostgreSQL database. Implemented data management dashboards and user administration features.",
-    result: "Delivered complete admin platform on schedule. Successfully led team through full development lifecycle from requirements to deployment.",
-    stack: ["React", "Java", "Spring Boot", "PostgreSQL", "Admin Dashboard"],
-    highlight: "Team lead for government AI platform",
+      "Led the development team as technical lead. Built comprehensive admin site using React frontend with Material-UI (MUI) shared component library, Java/Spring Boot backend, and PostgreSQL database. Designed reusable MUI common components for consistent UI across all modules and added interactive data visualization features.",
+    result: "Delivered complete admin platform on schedule. MUI common component library improved development efficiency by 50%. Interactive features significantly enhanced user experience and data accessibility.",
+    stack: ["React", "Java", "Spring Boot", "PostgreSQL", "Material-UI", "Admin Dashboard"],
+    highlight: "MUI components boosted dev efficiency 50%",
     color: "oklch(0.35_0.01_285)",
   },
   {
     num: "04",
     title: "CESCO Labeling Consulting Platform",
     type: "E-Commerce / Consulting",
-    year: "2022",
+    year: "2021",
     problem:
       "CESCO, a major Korean pest control and food safety company, needed a new e-commerce shopping mall and consulting website for their labeling services. The existing system was outdated and couldn't handle modern e-commerce requirements.",
     solution:

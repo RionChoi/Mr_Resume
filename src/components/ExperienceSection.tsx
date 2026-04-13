@@ -61,10 +61,16 @@ const experiences = [
 
 const education = [
   {
-    period: "2010 — 2014",
-    degree: "Computer Science / IT Related",
-    institution: "University (Seoul, South Korea)",
-    note: "Focus: Software Engineering, Database Systems",
+    period: "",
+    degree: "B.Ed. Physical Education",
+    institution: "Harbin Normal University (하얼빈 사범대학), China",
+    note: "Inner Mongolia, Hailar",
+  },
+  {
+    period: "",
+    degree: "High School Diploma",
+    institution: "Hailar No.3 High School (하이라얼 제3고등학교), Inner Mongolia, China",
+    note: "",
   },
 ];
 
