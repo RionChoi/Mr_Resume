@@ -14,7 +14,7 @@ const projects = [
     num: "01",
     title: "IBK BOX Platform Modernization",
     type: "Enterprise SaaS",
-    year: "2024",
+    year: "2024–2025",
     problem:
       "IBK Industrial Bank's SME investment platform was built on a monolithic ExBuilder framework with server-side rendering. The system suffered from tight coupling, slow deployments, and no CI/CD — login alone took 20 seconds.",
     solution:
@@ -28,7 +28,7 @@ const projects = [
     num: "02",
     title: "Shinhan NewSOL Hybrid Chatbot",
     type: "Hybrid App / FinTech",
-    year: "2023.06–2023.08",
+    year: "2023–2024",
     problem:
       "Shinhan Bank's NewSOL mobile app required an AI chatbot for customer service — but the WebView-based architecture had no bridge to native device APIs. Real-time agent hand-off and OTA deployment (bypassing App Store review cycles) were non-negotiable requirements.",
     solution:
@@ -42,7 +42,7 @@ const projects = [
     num: "03",
     title: "AICA — Gwangju AI Industrial Platform",
     type: "Gov't AI Platform / Frontend Lead",
-    year: "2022.03–2022.09",
+    year: "2022–2023",
     problem:
       "Gwangju Metropolitan City's AI convergence initiative needed a large-scale admin platform — 90+ pages across two portals (admin + public user). The team had no shared component standards, and the menu structure was managed server-side, requiring a dynamic routing solution.",
     solution:
@@ -56,7 +56,7 @@ const projects = [
     num: "04",
     title: "CESCO Food Label Consulting Platform",
     type: "B2B Platform / Food Safety",
-    year: "2022.06–2022.11",
+    year: "2021–2022",
     problem:
       "CESCO (Korea's major pest control & food safety firm) needed a B2B platform for food label consulting — replacing a fragmented email/phone workflow. Key requirements: real-time collaboration between consultants and clients, large document uploads (up to 500MB), and a 3-role permission model (customer / operator / admin).",
     solution:
@@ -70,7 +70,7 @@ const projects = [
     num: "05",
     title: "Early Career — Enterprise SI (2014–2022)",
     type: "7y 8m SI Experience",
-    year: "2014–2022",
+    year: "2014–2021",
     problem:
       "Across 19 enterprise SI projects over nearly 8 years, built mission-critical systems for major Korean institutions in finance, public sector, telecom, and culture — progressing from junior developer to senior engineer.",
     solution:
